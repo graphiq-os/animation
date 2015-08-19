@@ -11,8 +11,9 @@ exports.index = (req, res) ->
 
 exports.convert = (req, res) ->
 	url = req.body.url
+	duration = req.body.duration
 
-	converter.convert url
+	converter.convert url, duration
 		.then (output) -> 
 			res.send { url: output }
 		, (err) -> 

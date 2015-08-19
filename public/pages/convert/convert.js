@@ -5,6 +5,7 @@ angular.module('graphqapp')
 
 		var init = function() {
 			$scope.url = url;
+			$scope.duration = 2;
 			$scope.error = '';
 			$scope.output = '';
 
@@ -17,7 +18,8 @@ angular.module('graphqapp')
 			$scope.error = '';
 
 			Convert.convert({
-				url: $scope.url
+				url: $scope.url,
+				duration: $scope.duration
 			}).$promise
 				.then(function(result) {
 					$scope.completed = true;

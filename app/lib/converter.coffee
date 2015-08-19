@@ -11,12 +11,12 @@ removeFiles = (files) ->
   for file in files
     fs.unlink file
 
-module.exports.convert = (url) ->
+module.exports.convert = (url, duration) ->
   deferred = q.defer()
 
   prefix = 'snap' + moment()
   interval = Math.round(1000/config.video.fps)
-  snap_count = config.video.fps * config.video.duration
+  snap_count = config.video.fps * duration
   cmd = 'node_modules/phantomjs/bin/phantomjs renderer.js ' + prefix + ' ' + url + ' ' + interval + ' ' + snap_count
 
   exec cmd
@@ -28,7 +28,7 @@ module.exports.convert = (url) ->
 
       ffmpeg { source: config.root + '/temp/' + prefix + '-%03d.png', nolog: true }
         .fps config.video.fps
-        .loop config.video.duration
+        .loop duration
         .on 'end', -> 
           deferred.resolve output
           removeFiles images

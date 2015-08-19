@@ -12,6 +12,10 @@
           <label class="text-left pull-left">URL</label>
           <input type="text" class="form-control" placeholder="http://www.google.com" ng-model="url" required="required" />
       </div>
+      <div class="form-group">
+          <label class="text-left pull-left">Duration (seconds)</label>
+          <input type="number" class="form-control" placeholder="seconds" ng-model="duration" required="required" />
+      </div>
       <button class="btn btn-success pull-right"  ng-click="startConvert()" ng-disabled="!frm.$valid">Render</button>
       <div class="clearfix"></div>
     </form>
