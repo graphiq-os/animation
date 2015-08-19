@@ -16,24 +16,27 @@ page.viewportSize = { width: 1024, height: 768 };
 
 // open the web page
 page.open(address, function(status){
-    // successfully loaded
-    // now, start asynchronously to reload the cached page and take snapshot
-    setTimeout(function() {
-        // after reloaded
-        page.onLoadFinished = function(status) {
-            var i = 0;
-            // capture snapshot every `wait` milliseconds
-            setInterval(function() {
-                page.render('temp/' + prefix + '-' + zpad(i, 3) + '.png');
-                i++;
-                if(i >= iterations) {
-                    phantom.exit();
-                }
-            }, wait);
-        };
+  // successfully loaded
+  // now, start asynchronously to reload the cached page and take snapshot
+  setTimeout(function() {
+    // after reloaded
+    page.onLoadFinished = function(status) {
+      page.evaluate(function() {
+        document.body.bgColor = '#ffffff';
+      });
+      var i = 0;
+      // capture snapshot every `wait` milliseconds
+      setInterval(function() {
+        page.render('temp/' + prefix + '-' + zpad(i, 3) + '.png');
+        i++;
+        if(i >= iterations) {
+          phantom.exit();
+        }
+      }, wait);
+    };
 
-        // reload
+    // reload
 
-        page.reload();
-    }, 500);
+    page.reload();
+  }, 500);
 });
