@@ -1,0 +1,10 @@
+node_modules
+._.DS_Store
+.DS_Store
+._*
+config/env/local.coffee
+public/bower_components
+public/output/*
+!public/output/temp
+temp/*
+!temp/do_not_delete.me

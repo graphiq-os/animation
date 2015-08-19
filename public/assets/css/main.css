@@ -1,0 +1,195 @@
+.ui-waiting-spinner-container {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+}
+.ui-waiting-spinner-container .overlay {
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 9998;
+  background: transparent;
+}
+.ui-waiting-spinner-container .spinner {
+  margin: 100px auto;
+  width: 50px;
+  height: 50px;
+  position: relative;
+  z-index: 9999;
+}
+.ui-waiting-spinner-container .spinner .container1 > div,
+.ui-waiting-spinner-container .spinner .container2 > div,
+.ui-waiting-spinner-container .spinner .container3 > div {
+  width: 12px;
+  height: 12px;
+  background-color: #ccd;
+  border-radius: 100%;
+  position: absolute;
+  -webkit-animation: bouncedelay 1.2s infinite ease-in-out;
+  animation: bouncedelay 1.2s infinite ease-in-out;
+  /* Prevent first frame from flickering when animation starts */
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+}
+.ui-waiting-spinner-container .spinner .spinner-container {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+.ui-waiting-spinner-container .spinner .container2 {
+  -webkit-transform: rotateZ(45deg);
+  transform: rotateZ(45deg);
+}
+.ui-waiting-spinner-container .spinner .container3 {
+  -webkit-transform: rotateZ(90deg);
+  transform: rotateZ(90deg);
+}
+.ui-waiting-spinner-container .spinner .circle1 {
+  top: 0;
+  left: 0;
+}
+.ui-waiting-spinner-container .spinner .circle2 {
+  top: 0;
+  right: 0;
+}
+.ui-waiting-spinner-container .spinner .circle3 {
+  right: 0;
+  bottom: 0;
+}
+.ui-waiting-spinner-container .spinner .circle4 {
+  left: 0;
+  bottom: 0;
+}
+.ui-waiting-spinner-container .spinner .container2 .circle1 {
+  -webkit-animation-delay: -1.1s;
+  animation-delay: -1.1s;
+}
+.ui-waiting-spinner-container .spinner .container3 .circle1 {
+  -webkit-animation-delay: -1s;
+  animation-delay: -1s;
+}
+.ui-waiting-spinner-container .spinner .container1 .circle2 {
+  -webkit-animation-delay: -0.9s;
+  animation-delay: -0.9s;
+}
+.ui-waiting-spinner-container .spinner .container2 .circle2 {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+.ui-waiting-spinner-container .spinner .container3 .circle2 {
+  -webkit-animation-delay: -0.7s;
+  animation-delay: -0.7s;
+}
+.ui-waiting-spinner-container .spinner .container1 .circle3 {
+  -webkit-animation-delay: -0.6s;
+  animation-delay: -0.6s;
+}
+.ui-waiting-spinner-container .spinner .container2 .circle3 {
+  -webkit-animation-delay: -0.5s;
+  animation-delay: -0.5s;
+}
+.ui-waiting-spinner-container .spinner .container3 .circle3 {
+  -webkit-animation-delay: -0.4s;
+  animation-delay: -0.4s;
+}
+.ui-waiting-spinner-container .spinner .container1 .circle4 {
+  -webkit-animation-delay: -0.3s;
+  animation-delay: -0.3s;
+}
+.ui-waiting-spinner-container .spinner .container2 .circle4 {
+  -webkit-animation-delay: -0.2s;
+  animation-delay: -0.2s;
+}
+.ui-waiting-spinner-container .spinner .container3 .circle4 {
+  -webkit-animation-delay: -0.1s;
+  animation-delay: -0.1s;
+}
+@-webkit-keyframes bouncedelay {
+  0%,
+  80%,
+  100% {
+    -webkit-transform: scale(0);
+  }
+  40% {
+    -webkit-transform: scale(1);
+  }
+}
+@keyframes bouncedelay {
+  0%,
+  80%,
+  100% {
+    transform: scale(0);
+    -webkit-transform: scale(0);
+  }
+  40% {
+    transform: scale(1);
+    -webkit-transform: scale(1);
+  }
+}
+
+
+.loader,
+.loader:before,
+.loader:after {
+  background: #bce8f1;
+  -webkit-animation: load1 1s infinite ease-in-out;
+  animation: load1 1s infinite ease-in-out;
+  width: 1em;
+  height: 4em;
+}
+.loader:before,
+.loader:after {
+  position: absolute;
+  top: 0;
+  content: '';
+}
+.loader:before {
+  left: -1.5em;
+  -webkit-animation-delay: -0.32s;
+  animation-delay: -0.32s;
+}
+.loader {
+  text-indent: -9999em;
+  margin: 88px auto;
+  position: relative;
+  font-size: 11px;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
+  -webkit-animation-delay: -0.16s;
+  animation-delay: -0.16s;
+}
+.loader:after {
+  left: 1.5em;
+}
+@-webkit-keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0 #bce8f1;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em #bce8f1;
+    height: 5em;
+  }
+}
+@keyframes load1 {
+  0%,
+  80%,
+  100% {
+    box-shadow: 0 0 #bce8f1;
+    height: 4em;
+  }
+  40% {
+    box-shadow: 0 -2em #bce8f1;
+    height: 5em;
+  }
+}
+
+.clearfix {
+  clear:both;
+}
