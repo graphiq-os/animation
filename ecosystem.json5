@@ -4,7 +4,8 @@
       name      : "GraphQ",
       script    : "app.coffee",
       env : {
-        NODE_ENV: "production"
+        NODE_ENV: "production",
+        FFMPEG_PATH: "/home/ubuntu/bin/ffmpeg"
       }
     }
   ],

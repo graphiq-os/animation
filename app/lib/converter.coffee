@@ -1,5 +1,4 @@
 exec = require 'promise-exec'
-videoshow = require 'videoshow'
 ffmpeg = require 'fluent-ffmpeg';
 q = require 'q'
 moment = require 'moment'
