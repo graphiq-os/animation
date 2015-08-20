@@ -1,13 +1,13 @@
 {
-  "name": "thankubot",
+  "name": "GraphQ",
   "version": "1.0.0",
-  "description": "A Slack Bot",
+  "description": "Animation",
   "main": "./index",
   "scripts": {
     "postinstall": "./node_modules/bower/bin/bower install"
   },
   "keywords": [
-    "slack"
+    "graphq"
   ],
   "dependencies": {
     "address-validator": "^0.1.4",
@@ -41,6 +41,7 @@
     "mysql": "^2.8.0",
     "path": "^0.11.14",
     "phantomjs": "^1.9.18",
+    "pm2": "^0.14.7",
     "promise-exec": "^0.1.0",
     "q": "^1.4.1",
     "response-time": "^2.3.1",
