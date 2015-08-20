@@ -1,8 +1,8 @@
 {
   apps : [
     {
-      name      : "GrahpQ Animation",
-      script    : "server.js",
+      name      : "GraphQ",
+      script    : "app.coffee",
       env : {
         NODE_ENV: "production"
       }
