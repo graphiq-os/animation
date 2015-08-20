@@ -1,7 +1,7 @@
 module.exports =
   app:
     title: 'GraphQ'
-    url: 'https://thankubot.herokuapp.com'
+    url: 'https://52.11.211.11'
   
   port: process.env.PORT || 80
 
