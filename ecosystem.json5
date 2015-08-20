@@ -1,0 +1,23 @@
+{
+  apps : [
+    {
+      name      : "GrahpQ Animation",
+      script    : "./node_modules/coffee-script/bin/coffee app.coffee",
+      env_production : {
+        NODE_ENV: "production"
+      }
+    }
+  ],
+  deploy : {
+    production : {
+      key  : "pem/graphq.pem,
+      user : "ubuntu",
+      host : "52.11.211.11",
+      ref  : "origin/master",
+      repo : "https://github.com/graphiq-os/animation.git",
+      path : "/srv/production",
+      "pre-deploy": "",
+      "post-deploy" : "sudo npm install && sudo bower install --allow-root && sudo pm2 startOrRestart ecosystem.json5 --env production"
+    }
+  }
+}

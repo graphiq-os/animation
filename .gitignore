@@ -8,3 +8,4 @@ public/output/*
 !public/output/temp
 temp/*
 !temp/do_not_delete.me
+pem
