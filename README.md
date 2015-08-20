@@ -3,9 +3,17 @@
 For animation of chart
 
 ## How to run
+* install FFMPEG
+
+Please follow the guideline from https://trac.ffmpeg.org/wiki/CompilationGuide/Ubuntu.
+
 * install NPM
 
 `npm install`
+
+* install bower
+
+`bower install`
 
 * run the server
 
