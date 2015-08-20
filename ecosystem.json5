@@ -17,7 +17,7 @@
       repo : "https://github.com/graphiq-os/animation.git",
       path : "/srv/production",
       "pre-deploy": "",
-      "post-deploy" : "source ~/.profile && sudo npm install && sudo bower install --allow-root && sudo pm2 startOrRestart ecosystem.json5 --env production"
+      "post-deploy" : "sudo source ~/.profile && sudo npm install && sudo bower install --allow-root && sudo pm2 startOrRestart ecosystem.json5 --env production"
     }
   }
 }
