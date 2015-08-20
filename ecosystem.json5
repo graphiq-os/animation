@@ -10,7 +10,7 @@
   ],
   deploy : {
     production : {
-      key  : "pem/graphq.pem,
+      key  : "pem/graphq.pem",
       user : "ubuntu",
       host : "52.11.211.11",
       ref  : "origin/master",
