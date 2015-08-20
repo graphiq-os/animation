@@ -9,4 +9,4 @@ For animation of chart
 
 * run the server
 
-`node_modules/coffee-script/bin/coffee thankubot/app.coffee`
+`node_modules/coffee-script/bin/coffee app.coffee`
