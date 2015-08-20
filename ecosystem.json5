@@ -2,8 +2,7 @@
   apps : [
     {
       name      : "GrahpQ Animation",
-      script    : "/usr/local/bin/coffee",
-      node_args      : ["app.coffee"],
+      script    : "app.coffee",
       env : {
         NODE_ENV: "production"
       }
