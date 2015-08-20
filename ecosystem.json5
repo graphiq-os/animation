@@ -2,7 +2,7 @@
   apps : [
     {
       name      : "GrahpQ Animation",
-      script    : "app.coffee",
+      script    : "server.js",
       env : {
         NODE_ENV: "production"
       }
