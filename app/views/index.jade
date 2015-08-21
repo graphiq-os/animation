@@ -3,4 +3,7 @@ extends ./layout.jade
 block content
 	script.
 		var url = '!{url}';
+		var download = ('!{download}' === 'true');
+		var play_graphiq = ('!{play}' === 'true');
+		var time = parseInt('!{time}');
 	.convert-container(data-ng-include="'../pages/convert/convert.html'")

@@ -5,7 +5,9 @@ angular.module('graphqapp')
 
 		var init = function() {
 			$scope.url = url;
-			$scope.duration = 2;
+			$scope.duration = isNaN(time) ? 2 : time;
+			$scope.play_graphiq = play_graphiq;
+			$scope.download = download;
 			$scope.error = '';
 			$scope.output = '';
 
