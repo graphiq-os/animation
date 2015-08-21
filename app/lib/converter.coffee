@@ -17,7 +17,7 @@ module.exports.convert = (url, duration, play) ->
   interval = Math.round(1000/config.video.fps)
   snap_count = config.video.fps * duration
   cmd = 'node_modules/phantomjs/bin/phantomjs renderer.js ' + prefix + ' ' + url + ' ' + interval + ' ' + snap_count + ' ' + play
-
+  console.log 'Renderer command: ' + cmd;
   exec cmd
     .then (out) ->
       images = []

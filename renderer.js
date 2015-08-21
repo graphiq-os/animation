@@ -15,6 +15,7 @@ var play = system.args[5] == 'true';
 
 // browser size / snapshot dimension
 page.viewportSize = { width: 1024, height: 768 };
+page.settings.userAgent = 'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/37.0.2062.120 Safari/537.36 FTBImageGenerator/1.0';
 
 // open the web page
 page.open(address, function(status){
@@ -35,24 +36,28 @@ page.open(address, function(status){
         }
       }, wait);
     };
-    var mouseclick = function ( element ) {
-      // create a mouse click event
-      var event = document.createEvent( 'MouseEvents' );
-      event.initMouseEvent( 'click', true, true, window, 1, 0, 0 );
-   
-      // send click to element
-      element.dispatchEvent( event );
-    };
     // after reloaded
     page.onLoadFinished = function(status) {
-      if(play) {
-        var element = document.querySelector( '.gfx-slider-play' );
-        mouseclick_fn( element );
-        startCapture();
-      }
-      else {
-        startCapture();
-      }
+      var startProcess = function(data) {
+        console.log('Main page is loaded and ready');
+        //Do whatever here
+        if(play) {
+          page.evaluate( function() {
+            var element = document.querySelector( '.gfx-slider-play' );
+            var event = document.createEvent( 'MouseEvent' );
+            event.initMouseEvent( 'click', true, true, window, 1, 0, 0 );   
+            // send click to element
+            element.dispatchEvent( event );
+          });
+          startCapture();
+        }
+        else {
+          startCapture();
+        }
+      };
+      setTimeout(function() {
+        startProcess();
+      }, 1000);
     };
 
     // reload
