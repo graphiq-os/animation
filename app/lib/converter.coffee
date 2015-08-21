@@ -10,13 +10,13 @@ removeFiles = (files) ->
   for file in files
     fs.unlink file
 
-module.exports.convert = (url, duration) ->
+module.exports.convert = (url, duration, play) ->
   deferred = q.defer()
 
   prefix = 'snap' + moment()
   interval = Math.round(1000/config.video.fps)
   snap_count = config.video.fps * duration
-  cmd = 'node_modules/phantomjs/bin/phantomjs renderer.js ' + prefix + ' ' + url + ' ' + interval + ' ' + snap_count
+  cmd = 'node_modules/phantomjs/bin/phantomjs renderer.js ' + prefix + ' ' + url + ' ' + interval + ' ' + snap_count + ' ' + play
 
   exec cmd
     .then (out) ->

@@ -21,7 +21,8 @@ angular.module('graphqapp')
 
 			Convert.convert({
 				url: $scope.url,
-				duration: $scope.duration
+				duration: $scope.duration,
+				play_graphiq: $scope.play_graphiq
 			}).$promise
 				.then(function(result) {
 					$scope.completed = true;
